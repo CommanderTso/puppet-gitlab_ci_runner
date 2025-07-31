@@ -64,7 +64,7 @@ Puppet::Functions.create_function(:'gitlab_ci_runner::register_to_file') do
         File.write(filename, authtoken)
         File.chmod(0o400, filename)
       rescue Net::HTTPError => e
-        raise "Gitlab runner failed to register: #{e.message}"
+        raise "Gitlab runner failed to register: #{e}"
       end
     end
 
